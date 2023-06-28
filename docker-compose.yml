@@ -49,7 +49,11 @@ services:
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
 # Similar to MySQL image variables, the last four lines define the main variables needed for the WordPress container to work properly with the MySQL container.
     volumes:
-      ["./www:/var/www/html"]
+      - "./www:/var/www/html"
+      #- "./config/php/wordpress.ini:/usr/local/php/conf.d/php.ini"
+      #["./www:/var/www/html"]
 volumes:
   mysql: {}
+  wordpress: {}
+
 
